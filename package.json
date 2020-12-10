@@ -1,0 +1,25 @@
+{
+    "name": "postfix-haskell",
+    "displayName": "postfix-haskell",
+    "description": "syntax highlighting for postfix haskell",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.51.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "postfixhaskell",
+            "aliases": ["Postfix Haskell", "postfixhaskell"],
+            "extensions": [".phs"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "postfixhaskell",
+            "scopeName": "source.phs",
+            "path": "./syntaxes/postfixhaskell.tmLanguage.json"
+        }]
+    }
+}
