@@ -1,3 +1,9 @@
+# Postfix Haskell VSCode extension
+This extension provides basic syntax highlighting for [postfix haskell](https://github.com/dvtate/postfix-haskell).
+
+---------
+
+
 # postfix-haskell README
 
 This is the README for your extension "postfix-haskell". After writing up a brief description, we recommend including the following sections.
