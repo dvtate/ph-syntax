@@ -29,7 +29,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.postfixhaskell",
-					"match": "\\b(pack|fun|true|false|class|unpack|type|global|volatile)\\b"
+					"match": "\\b(pack|fun|true|false|class|unpack|type|global|target|export)\\b"
 				}, {
 					"name": "keyword.operator.new",
 					"match": "\\b(make)\\b"
@@ -62,16 +62,16 @@
 		"numbers": {
 			"patterns": [{
 				"name": "constant.numeric.postfixhaskell",
-				"match": "\\b\\-?[0-9]+(\\.[0-9]+)?(L|l)?\\b"
+				"match": "\\b\\-?[0-9]+(\\.[0-9]+)?(L|l|F|f)?\\b"
 			}]
 		},
 		"identifiers": {
 			"patterns": [{
 				"name": "variable.other.postfixhaskell",
-				"match": "(?:\\s|^)(\\$\\S+)(?:\\s|\\b)"
+				"match": "(?:\\s|\\b|^)(\\$\\S+)(?:\\s|\\b|$)"
 			}, {
 				"name": "entity.name.function.postfixhaskell",
-				"match": "(?:\\s|^)(\\:\\S+)(?:\\s|\\b)"
+				"match": "(?:\\s|\\b|^)(\\:\\S+)(?:\\s|\\b|$)"
 			}]
 		},
 		"comments": {
