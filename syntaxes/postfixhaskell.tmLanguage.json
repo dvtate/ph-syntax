@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Postfix Haskell",
+	"name": "postfixhaskell",
 	"patterns": [
 		{
 			"include": "#keywords"
@@ -29,10 +29,13 @@
 			"patterns": [
 				{
 					"name": "keyword.control.postfixhaskell",
-					"match": "\\b(pack|fun|true|false|class|unpack|type|global|target|export)\\b"
+					"match": "(?:\\s|\\b|^)(pack|fun|true|false|class|unpack|type|global|target|export)\\b"
 				}, {
 					"name": "keyword.operator.new",
-					"match": "\\b(make)\\b"
+					"match": "(?:\\s|\\b|^)\\b(make)\\b"
+				}, {
+					"name": "keyword.operator.postfixhaskell",
+					"match": "(?:\\s|\\b)(\\=|\\||\\+|\\*|\\%|\\-|\\/|\\@|\\~|\\=\\=|\\<|\\>)\\b"
 				}
 			]
 		},
@@ -51,27 +54,29 @@
 			"begin": "\\{",
 			"end": "\\}",
 			"beginCaptures": {
-			  "0": { "name": "punctuation.brace.open" }
+			  "0": { "name": "punctuation.definition.block.postfixhaskell" }
 			},
 			"endCaptures": {
-			  "0": { "name": "punctuation.brace.close" }
+			  "0": { "name": "punctuation.definition.block.postfixhaskell" }
 			},
 			"name": "expression.group",
-			"patterns": [{ "include": "#expression" }]
+			"patterns": [{
+				"include": "#expression"
+			}]
 		},
 		"numbers": {
 			"patterns": [{
 				"name": "constant.numeric.postfixhaskell",
-				"match": "\\b\\-?[0-9]+(\\.[0-9]+)?(L|l|F|f)?\\b"
+				"match": "(\\b|\\s)\\-?[0-9]+(\\.[0-9]+)?(L|l|F|f)?\\b"
 			}]
 		},
 		"identifiers": {
 			"patterns": [{
 				"name": "variable.other.postfixhaskell",
-				"match": "(?:\\s|\\b|^)(\\$\\S+)(?:\\s|\\b|$)"
+				"match": "(\\s|\\b|^)\\$\\S+\\b"
 			}, {
 				"name": "entity.name.function.postfixhaskell",
-				"match": "(?:\\s|\\b|^)(\\:\\S+)(?:\\s|\\b|$)"
+				"match": "(\\s|\\b|^)(\\:[^\\s\\}\\{]+)\\b"
 			}]
 		},
 		"comments": {
@@ -83,7 +88,7 @@
 		"typenames": {
 			"patterns": [{
 				"name": "entity.name.type.postfixhaskell",
-				"match": "\\b[A-Z]\\S+\\b"
+				"match": "(\\s|\\b|^)[A-Z]\\S+\\b"
 			}]
 		}
 	},
