@@ -29,13 +29,13 @@
 			"patterns": [
 				{
 					"name": "keyword.control.postfixhaskell",
-					"match": "(?:\\s|\\b|^)(pack|fun|true|false|class|unpack|type|global|target|export)\\b"
+					"match": "(?:\\s|\\b|^)(\\=|fun|class|unpack|type|global|export|import|require|use|namespace|enum|\\@|\\~|\\=\\=|static_init|static_region|asm|_asm)\\b"
 				}, {
 					"name": "keyword.operator.new",
 					"match": "(?:\\s|\\b|^)\\b(make)\\b"
-				}, {
-					"name": "keyword.operator.postfixhaskell",
-					"match": "(?:\\s|\\b)(\\=|\\||\\+|\\*|\\%|\\-|\\/|\\@|\\~|\\=\\=|\\<|\\>)\\b"
+				},  {
+					"name": "keyword.other",
+					"match": "(?:\\s|\\b|^)\\b(Arrow|Any|Never|global|I32|F32|F64|I64|Syntax\\:Macro|Syntax\\:Data|Syntax\\:Type|Syntax\\:Id|Syntax\\:Expr|Syntax\\:Fxn|Syntax\\:Str|Syntax\\:Ns|Syntax\\:EnumNs)\\b"
 				}
 			]
 		},
@@ -72,9 +72,11 @@
 		},
 		"identifiers": {
 			"patterns": [{
+				"comment": "escaped identifiers",
 				"name": "variable.other.postfixhaskell",
 				"match": "(\\s|\\b|^)\\$\\S+\\b"
 			}, {
+				"comment": "Compiler debugging macros",
 				"name": "entity.name.function.postfixhaskell",
 				"match": "(\\s|\\b|^)(\\:[^\\s\\}\\{]+)\\b"
 			}]
